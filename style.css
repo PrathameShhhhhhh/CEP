@@ -1,0 +1,250 @@
+/* Compare table for dialog */
+.compare-table {
+    display: flex;
+    gap: 32px;
+    margin-top: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+.compare-col {
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 2.5px solid #1976d2;
+    box-shadow: 0 2px 8px rgba(25,118,210,0.09);
+    padding: 18px 16px 12px 16px;
+    min-width: 240px;
+    max-width: 340px;
+    text-align: left;
+    font-size: 1em;
+    word-break: break-word;
+    overflow-x: auto;
+}
+.compare-col h3 {
+	color: #f44369;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 1.15em;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+}
+.compare-col p {
+	margin: 7px 0;
+	line-height: 1.5;
+}
+
+.dialog-content {
+	/* ...existing code... */
+	border: 3.5px double #1976d2;
+	box-shadow: 0 12px 40px rgba(44,62,80,0.22), 0 2px 10px rgba(25,118,210,0.15);
+}
+/* Operation choice buttons */
+.operation-choice {
+	display: flex;
+	justify-content: center;
+	gap: 18px;
+	margin-bottom: 22px;
+}
+.op-btn {
+	padding: 10px 22px;
+	border-radius: 7px;
+	border: 2px solid #1976d2;
+	background: #fff;
+	color: #1976d2;
+	font-size: 1.08em;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+	box-shadow: 0 1.5px 6px rgba(25,118,210,0.07);
+	letter-spacing: 0.5px;
+}
+.op-btn.selected, .op-btn:hover {
+	background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+	color: #fff;
+	border: 2px solid #1565c0;
+	box-shadow: 0 2px 8px rgba(25,118,210,0.13);
+}
+
+/* Dialog/modal styles */
+.dialog-modal {
+	position: fixed;
+	top: 0; left: 0; width: 100vw; height: 100vh;
+	background: rgba(30, 34, 90, 0.18);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	animation: fadeIn 0.5s;
+}
+.dialog-content {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(44,62,80,0.22), 0 2px 10px rgba(25,118,210,0.15);
+    border: 3.5px double #1976d2;
+    min-width: 600px;
+    max-width: 99vw;
+    min-height: 260px;
+    max-height: 92vh;
+    padding: 44px 38px 32px 38px;
+    position: relative;
+    animation: fadeIn 0.7s cubic-bezier(.39,.575,.56,1) both;
+    overflow-y: auto;
+}
+
+.close-btn {
+	position: absolute;
+	top: 12px;
+	right: 18px;
+	font-size: 1.7em;
+	color: #1976d2;
+	cursor: pointer;
+	font-weight: bold;
+	transition: color 0.2s;
+}
+.close-btn:hover {
+	color: #f44369;
+}
+
+
+
+
+body {
+	font-family: 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(135deg, #f44369 0%, #fbc02d 100%);
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	position: relative;
+	overflow-x: hidden;
+}
+
+/* Animated floating blood drops and medical icons */
+.bg-medical {
+	position: fixed;
+	top: 0; left: 0; width: 100vw; height: 100vh;
+	z-index: 0;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.bg-medical svg {
+	position: absolute;
+	opacity: 0.55;
+	/* Remove blur for clarity */
+	filter: none;
+	animation: float 7s ease-in-out infinite;
+}
+.bg-medical .drop1 { left: 8vw; top: 10vh; width: 80px; animation-delay: 0s; }
+.bg-medical .drop2 { left: 70vw; top: 18vh; width: 60px; animation-delay: 2s; }
+.bg-medical .drop3 { left: 40vw; top: 70vh; width: 100px; animation-delay: 1s; }
+.bg-medical .syringe { left: 80vw; top: 60vh; width: 90px; animation-delay: 3s; }
+.bg-medical .bag { left: 20vw; top: 80vh; width: 70px; animation-delay: 4s; }
+
+@keyframes float {
+	0%, 100% { transform: translateY(0) scale(1); }
+	50% { transform: translateY(-30px) scale(1.07); }
+}
+
+.container {
+	max-width: 420px;
+	margin: 48px auto 0 auto;
+	background: rgba(255,255,255,0.98);
+	padding: 36px 30px 28px 30px;
+	border-radius: 18px;
+	box-shadow: 0 8px 32px rgba(44,62,80,0.13), 0 1.5px 6px rgba(25,118,210,0.08);
+	animation: fadeIn 1.2s cubic-bezier(.39,.575,.56,1) both;
+	position: relative;
+	z-index: 1;
+}
+
+@keyframes fadeIn {
+	0% { opacity: 0; transform: translateY(30px); }
+	100% { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+	text-align: center;
+	color: #1976d2;
+	margin-bottom: 28px;
+	letter-spacing: 1px;
+	font-size: 2.1em;
+	font-weight: 700;
+	text-shadow: 0 2px 8px #e3f2fd;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+label {
+	font-weight: 600;
+	color: #263859;
+	margin-bottom: 4px;
+	letter-spacing: 0.5px;
+}
+
+select {
+	padding: 10px 8px;
+	border-radius: 7px;
+	border: 1.5px solid #b6c6e3;
+	font-size: 1.08em;
+	background: #f8fafc;
+	transition: border 0.2s;
+}
+select:focus {
+	border: 1.5px solid #1976d2;
+	outline: none;
+}
+
+button {
+	padding: 11px 0;
+	border-radius: 7px;
+	background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+	color: #fff;
+	border: none;
+	font-size: 1.1em;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(25,118,210,0.08);
+	transition: background 0.2s, transform 0.1s;
+	letter-spacing: 0.5px;
+}
+button:hover {
+	background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
+	transform: translateY(-2px) scale(1.03);
+}
+
+.result {
+	margin-top: 28px;
+	padding: 20px 18px 16px 18px;
+	background: linear-gradient(100deg, #e3f2fd 80%, #fff 100%);
+	border-radius: 10px;
+	color: #1a237e;
+	min-height: 48px;
+	font-size: 1.08em;
+	box-shadow: 0 1.5px 6px rgba(25,118,210,0.07);
+	animation: fadeIn 1.2s cubic-bezier(.39,.575,.56,1) both;
+}
+
+.result h2 {
+	color: #1976d2;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+}
+
+.result p {
+	margin: 7px 0;
+	line-height: 1.5;
+}
+
+.error {
+	color: #d32f2f;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+}

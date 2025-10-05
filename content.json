@@ -1,0 +1,23 @@
+{
+  "title": "Blood Group Information",
+  "description": "Select a blood group to see its details, donation, and acceptance properties.",
+  "labels": {
+    "blood_group": "Blood Group",
+    "submit": "Show Details",
+    "result": "Result",
+    "description": "Description",
+    "can_donate_to": "Can Donate To",
+    "can_receive_from": "Can Receive From",
+    "error": "Error"
+  },
+  "blood_groups": [
+    "A+",
+    "A-",
+    "B+",
+    "B-",
+    "AB+",
+    "AB-",
+    "O+",
+    "O-"
+  ]
+}
